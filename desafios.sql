@@ -39,7 +39,41 @@ ORDER BY ListPrice DESC
 -- Obter o nome e numero do produto dos produtos que tem o ProductIT entre 1~4
 
 SELECT TOP 4 name,productnumber
-FROM production.Product
+FROM Production.Product
 ORDER BY ProductID asc
 
 
+-- Quantos produtos temos cadastrados no sistemas que custam mais que 1500 dolares ?
+
+SELECT count(listprice)
+FROM Production.Product
+WHERE ListPrice > 1500
+
+-- Quantas pessoas temos com o sobrenome que inicia com a letra P ?
+
+SELECT count(LastName)
+FROM Person.Person
+WHERE LastName like 'p%'
+
+-- Em quantas cidades unicas estão cadastrados nossos clientes ?
+
+SELECT count(DISTINCT(city))
+FROM person.Address
+
+-- Quais são as cidades unicas que temos cadastrados em nosso sistemas ?
+
+SELECT DISTINCT(city)
+FROM person.Address
+
+-- Quantos produtos vermelhos tem preço entre 500 a 1000 dolares ?
+
+SELECT COUNT(*)
+FROM Production.Product
+WHERE color = 'red'
+AND ListPrice between 500 and 1000;
+
+-- Quantos produtos cadastrados tem a palavra 'road' no nome deles ?
+
+SELECT COUNT(*)
+FROM Production.Product
+WHERE name LIKE '%road%' 

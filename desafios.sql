@@ -77,3 +77,30 @@ AND ListPrice between 500 and 1000;
 SELECT COUNT(*)
 FROM Production.Product
 WHERE name LIKE '%road%' 
+
+-- Preciso sabe quantas pessoas tem o mesmo MiddleName agrupados por MiddleName
+
+SELECT MiddleName, COUNT(MiddleName) AS "Quantidade"
+FROM Person.Person
+GROUP BY MiddleName
+
+-- Preciso saber em media qualo é a quantidade(quantity) que cada produto é vendido na loja.
+
+SELECT ProductID, AVG(OrderQty) AS "Media"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+
+-- Estamos querendo indentificar as ptrovincias(stateProvinceID) com maior numero de cadastros no nosso sistemas, então é preciso emcontrar quaisprovincias (stateProvinceID) no banco de dados mais que 1000
+
+SELECT StateProvinceID, count(StateProvinceID) AS "Quantidade"
+FROM Person.Address
+GROUP BY StateProvinceID
+HAVING count(StateProvinceID) > 1000
+
+-- Sendo que se trata de uma multinacional os gerentes querem saber quaisprodutos (productID) não estão trazendo em media no minimo 1 milhao em total de vendas (lineTotal)
+
+SELECT ProductID, AVG(linetotal)
+FROM sales.SalesOrderDetail
+GROUP BY ProductID
+HAVING AVG(LineTotal) < 1000000
+

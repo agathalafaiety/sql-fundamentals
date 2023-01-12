@@ -17,3 +17,21 @@ GROUP BY SpecialOfferID
 SELECT SpecialOfferID, UnitPrice
 FROM Sales.SalesOrderDetail
 WHERE SpecialOfferID = 9
+
+ -- quero saber quantos cada produto foi vendido até hoje
+SELECT * FROM Sales.SalesOrderDetail
+
+SELECT ProductId, COUNT(ProductId) AS "Contagem"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+
+-- quero saber quantos nomes de cada nome temos cadastrado em nosso banco de dados 
+SELECT FirstName, COUNT(FirstName) AS "Contagem"
+FROM Person.Person
+GROUP BY FirstName
+
+-- na tabela production.product eu quero saber a media de preco para os produtos que sao pratas(silver
+SELECT AVG(ListPrice) "Media Preco"
+FROM Production.Product
+WHERE Color = 'Silver'
+GROUP BY Color

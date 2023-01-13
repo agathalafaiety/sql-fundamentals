@@ -1,0 +1,1 @@
+-- FULL OTER JOIN retorna um conjunto de rodos registros correspondentes da TabelaA e TabelaB quando são iguais. E além disso se não houver valores correspopndentes, ele simplismente irá preencher esse lado com "NULL".

@@ -1,3 +1,8 @@
+--- Retorna apenas os resultados que correspondem (existem) tanto na tabela A como na tabela B
+
+SELECT * FROM TabelaA
+INNER JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome
 
 SELECT c.Cliente, C.Nome, E.Rua, E.Cidade
 FROM Client C 

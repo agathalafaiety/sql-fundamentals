@@ -23,3 +23,4 @@ SELECT FirstName
 FROM Person.Person
 WHERE BusinessEntityID IN (
     SELECT BusinessEntityID FROM HumanResources.Employee WHERE JobTitle = 'Design Engineer')
+  

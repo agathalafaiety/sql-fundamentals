@@ -1,5 +1,3 @@
-
-
 -- Monte um relatorio de todos os produtos cadastrados que tem preço de venda acima da media
 
 -- SELECT NORMAL
